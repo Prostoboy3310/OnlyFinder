@@ -19,10 +19,17 @@ namespace OnlyFinder
         public MainWindow()
         {
             InitializeComponent();
-<<<<<<< HEAD
+
             // TEST
-=======
->>>>>>> 830849812481277514dbb886b0459368393c0d75
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Register1 Reg1 = new Register1();
+            Reg1.Show();
+
+            this.Close();
         }
     }
 }

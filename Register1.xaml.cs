@@ -23,5 +23,14 @@ namespace OnlyFinder
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MainW = new MainWindow();
+
+            MainW.Show();
+
+            this.Close();
+        }
     }
 }
