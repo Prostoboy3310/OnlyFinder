@@ -19,7 +19,10 @@ namespace OnlyFinder
         public MainWindow()
         {
             InitializeComponent();
+<<<<<<< HEAD
             // TEST
+=======
+>>>>>>> 830849812481277514dbb886b0459368393c0d75
         }
     }
 }
