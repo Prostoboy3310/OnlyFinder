@@ -32,5 +32,14 @@ namespace OnlyFinder
 
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Registrieren2 Reg2 = new Registrieren2();
+
+            Reg2.Show();
+
+            this.Close();
+        }
     }
 }
