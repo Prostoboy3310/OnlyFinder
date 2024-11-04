@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OnlyFinder"
         mc:Ignorable="d"
         Title="OnlyFinder" Width="600" Height="400">
-    <Grid Background="#FF94CDC5">
+    <Grid Background="#FF71A36D">
         <Grid.Style>
             <Style/>
         </Grid.Style>
@@ -32,8 +32,8 @@
         <Label Grid.Column="1" Content="Only Finder" HorizontalAlignment="Left" Margin="182,0,0,0" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
         <Label Grid.Column="1" Content="E-Mail" HorizontalAlignment="Left" Margin="100,5,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         <Label Grid.Column="1" Content="Password" HorizontalAlignment="Left" Margin="100,0,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Canvas Grid.Column="1" Background="#0F3551" Panel.ZIndex="-1"/>
-        <Canvas Grid.Column="2" Background="#0F3551" Panel.ZIndex="-1"/>
+        <Canvas Grid.Column="1" Background="#FF86122B" Panel.ZIndex="-1"/>
+        <Canvas Grid.Column="2" Background="#FF952539" Panel.ZIndex="-1"/>
         <Canvas Background="#0F3551" Panel.ZIndex="-1"/>
         <Button Grid.Column="1" Content="Login" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="102" Height="30" Margin="298,14,0,0" Click="Button_Click_1"/>
 
