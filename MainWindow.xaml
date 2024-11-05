@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OnlyFinder"
         mc:Ignorable="d"
         Title="OnlyFinder" Width="600" Height="400">
-    <Grid Background="Black">
+    <Grid Background="Orange">
         <Grid.Style>
             <Style/>
         </Grid.Style>
