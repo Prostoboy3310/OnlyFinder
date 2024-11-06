@@ -35,9 +35,9 @@
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1"/>
-        <Canvas Background="#FF0F3551" Panel.ZIndex="-1"/>
-        <Canvas Grid.Column="1" Background="#FF0F3551" Panel.ZIndex="-1"/>
-        <Canvas Grid.Column="2" Background="#FF0F3551" Panel.ZIndex="-1"/>
+        <Canvas Background="Black" Panel.ZIndex="-1"/>
+        <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
+        <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1"/>
         <Label Grid.Column="2" Content="Ich bin" HorizontalAlignment="Center" Margin="0,46,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Grid.Column="2" Content="Ich Suche" HorizontalAlignment="Center" Margin="0,46,0,0" Grid.Row="3" VerticalAlignment="Top"/>
         <RadioButton Grid.Column="2" Content="Man" HorizontalAlignment="Left" Margin="30,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
