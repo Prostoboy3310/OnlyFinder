@@ -32,5 +32,13 @@ namespace OnlyFinder
 
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Register3 reg3 = new Register3();
+            reg3.Show();
+           
+            this.Close();
+        }
     }
 }

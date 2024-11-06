@@ -11,11 +11,12 @@
             <Style/>
         </Grid.Style>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="44*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -25,7 +26,7 @@
         </Grid.ColumnDefinitions>
         <!-- <Canvas Grid.Column="1" Grid.Row="2" Background="Black"/> -->
         <CheckBox Grid.Column="1" Content="Angemeldet bleiben" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" ClickMode="Press"/>
-        <Button Grid.Column="1" Content="Registrieren" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="100" Height="30" Margin="100,14,0,0" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
+        <Button Grid.Column="1" Content="Registrieren" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="30" Margin="100,14,0,0" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -44,7 +45,7 @@
         <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Background="Black" Panel.ZIndex="-1"/>
-        <Button Grid.Column="1" Content="Login" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="102" Height="30" Margin="298,14,0,0" Click="Button_Click_1" Foreground="white" Background="Black"/>
+        <Button Grid.Column="1" Content="Login" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="102" Height="30" Margin="298,14,0,0" Click="Button_Click_1" Foreground="white" Background="Black"/>
 
 
     </Grid>
