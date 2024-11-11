@@ -60,5 +60,13 @@ namespace OnlyFinder
                 e.Effects = DragDropEffects.None;
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Registrieren2 R2 = new Registrieren2();
+            R2.Show();
+
+            this.Close();
+        }
     }
 }

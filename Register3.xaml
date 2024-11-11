@@ -22,7 +22,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
@@ -55,8 +55,8 @@
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Panel.ZIndex="7" Background="Black"/>
         <Canvas Grid.Column="3" Background="Black" Panel.ZIndex="-1"/>
-        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click"/>
-        <Button Grid.Column="3" Content="Weiter" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_1"/>
+        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_2"/>
+        <Button Grid.Column="3" Content="Speichern" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" />
         <Canvas Grid.Column="1" Grid.Row="1" Background="#FF929292" Margin="10,20,10,10">
             <Image Stretch="Uniform" x:Name="MyImage"  Grid.Column="1" HorizontalAlignment="Left" Height="203" Grid.Row="1" VerticalAlignment="Top" Width="261" Drop="Image_Drop" DragEnter="Image_DragEnter" OpacityMask="#FFDA1E1E" Canvas.Left="10" Canvas.Top="10"/>
         </Canvas>
