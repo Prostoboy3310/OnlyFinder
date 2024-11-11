@@ -24,6 +24,16 @@ namespace OnlyFinder
             InitializeComponent();
         }
 
+        string UsernameBox;
+
+        public void SetValues(string Username)
+        {
+            UsernameBox = Username;
+            Name.Text = Username;
+        }
+
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Register1 reg1 = new Register1();

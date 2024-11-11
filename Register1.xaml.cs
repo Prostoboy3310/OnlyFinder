@@ -24,6 +24,8 @@ namespace OnlyFinder
             InitializeComponent();
         }
 
+        string UserBox;
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow MainW = new MainWindow();
@@ -39,7 +41,11 @@ namespace OnlyFinder
 
             Reg2.Show();
 
-            this.Close();
+            UserBox = UsernameBox.Text;
+
+            Reg2.SetValues(UserBox);
+
+            //this.Close();
         }
     }
 }
