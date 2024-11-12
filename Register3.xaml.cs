@@ -25,6 +25,35 @@ namespace OnlyFinder
             InitializeComponent();
         }
 
+        string Username;
+        string Email;
+        string Password;
+
+        string IchBin;
+        string Suche;
+
+        string Name;
+        string Geburtsdatum;
+        string Wohnort;
+        string Telefon;
+
+        string Hobbies;
+        string WelcomeText;
+        // image?
+
+        public void GetData(string User, string email, string password, string ichbin, string suche, string name, string geburtsdatum, string wohnort, string telefon)
+        {
+            Username = User;
+            Email = email;
+            Password = password;
+            IchBin = ichbin;
+            Suche = suche;
+            Name = name;
+            Geburtsdatum = geburtsdatum;
+            Wohnort = wohnort;
+            Telefon = telefon;
+        }
+
         private void Image_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))

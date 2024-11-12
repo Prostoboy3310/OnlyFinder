@@ -25,11 +25,25 @@ namespace OnlyFinder
         }
 
         string UsernameBox;
+        string EmailBox;
+        string PasswordBox;
 
-        public void SetValues(string Username)
+        string IchBin;
+        string Suche;
+
+        string Name;
+        string Geburtsdatum;
+        string Wohnort;
+        string Telefon;
+        
+
+        public void SetValues(string Username, string Email, string Password)
         {
             UsernameBox = Username;
-            Name.Text = Username;
+            EmailBox = Email;
+            PasswordBox = Password;
+
+            //NameBox.Text = Username;
         }
 
 
@@ -48,6 +62,42 @@ namespace OnlyFinder
             Register3 reg3 = new Register3();
             reg3.Show();
            
+            if (Ich_Man.IsChecked == true)
+            {
+                IchBin = "M";
+            }
+            else if(Ich_Frau.IsChecked == true)
+            {
+                IchBin = "F";
+            }
+            else if(Ich_Divers.IsChecked == true)
+            {
+                IchBin = "D";
+            }
+            else
+            {
+                MessageBox.Show("Wählen sie geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            if (Suche_Man.IsChecked == true)
+            {
+                Suche = "M";
+            }
+            else if (Suche_Frau.IsChecked == true)
+            {
+                Suche = "F";
+            }
+            else if (Suche_Divers.IsChecked == true)
+            {
+                Suche = "D";
+            }
+            else
+            {
+                MessageBox.Show("Wählen sie Partner geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            
+
             this.Close();
         }
     }
