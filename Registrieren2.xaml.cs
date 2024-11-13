@@ -23,5 +23,22 @@ namespace OnlyFinder
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Register1 reg1 = new Register1();
+
+            reg1.Show();
+
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Register3 reg3 = new Register3();
+            reg3.Show();
+           
+            this.Close();
+        }
     }
 }
