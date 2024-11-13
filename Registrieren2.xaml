@@ -20,8 +20,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click"/>
-        <Button Grid.Column="2" Content="Weiter" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_1"/>
+        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click" Foreground="White" Background="Black"/>
+        <Button Grid.Column="2" Content="Weiter" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_1" Foreground="White" Background="black"/>
         <TextBox x:Name="NameBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="1" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="GeburtsdatumBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="2" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="WohnortBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="3" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
