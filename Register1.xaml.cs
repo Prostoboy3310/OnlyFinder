@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-
 namespace OnlyFinder
 {
     /// <summary>
@@ -23,6 +22,7 @@ namespace OnlyFinder
         public Register1()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
 
         string UserBox;

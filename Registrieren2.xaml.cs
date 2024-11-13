@@ -22,6 +22,7 @@ namespace OnlyFinder
         public Registrieren2()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
 
         string UsernameBox;

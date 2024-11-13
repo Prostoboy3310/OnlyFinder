@@ -13,7 +13,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="75"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -43,8 +43,11 @@
         <RadioButton x:Name="Suche_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Margin="30,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
         <RadioButton x:Name="Suche_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center"/>
         <RadioButton x:Name="Suche_Divers" Grid.Column="2" Content="Divers" HorizontalAlignment="Left" Margin="230,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
-        <RadioButton x:Name="Ich_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Margin="30,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
-        <RadioButton x:Name="Ich_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
-        <RadioButton x:Name="Ich_Divers" Grid.Column="2" Content="Devers" HorizontalAlignment="Left" Margin="230,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+
+        <Canvas Grid.Column="2" Grid.Row="2">
+            <RadioButton x:Name="Ich_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="30" Canvas.Top="24"/>
+            <RadioButton x:Name="Ich_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="142" Canvas.Top="24"/>
+            <RadioButton x:Name="Ich_Divers" Grid.Column="2" Content="Devers" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="230" Canvas.Top="24"/>
+        </Canvas>
     </Grid>
 </Window>
