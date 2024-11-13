@@ -15,8 +15,8 @@
         </Grid.Style>
         <Grid.RowDefinitions>
             <RowDefinition Height="100.022"/>
-            <RowDefinition Height="251*"/>
-            <RowDefinition Height="83*"/>
+            <RowDefinition/>
+            <RowDefinition Height="83.004"/>
 
         </Grid.RowDefinitions>
 
@@ -29,8 +29,8 @@
 
         <Grid Grid.Column="2" Margin="0,100,0,9" Grid.RowSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="54*"/>
+                <RowDefinition Height="67*"/>
             </Grid.RowDefinitions>
             <RichTextBox Margin="10,20,10,10">
                 <FlowDocument>
@@ -46,8 +46,8 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,-6,0,0" VerticalAlignment="Top"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="10,-6,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Height="26" Grid.Row="1" Width="38"/>
         </Grid>
 
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>

@@ -16,29 +16,30 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="72.34"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="77.682"/>
+            <RowDefinition Height="69.531"/>
+            <RowDefinition Height="69.715"/>
+            <RowDefinition Height="69.715"/>
+            <RowDefinition Height="69.715"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="2" Content="Weiter" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_1" Foreground="White" Background="Black"/>
-        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click" Foreground="White" Background="Black"/>
+        <Button Grid.Column="2" Content="Weiter" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_1" Foreground="White" Background="Black"/>
+        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click" Foreground="White" Background="Black"/>
         <Image HorizontalAlignment="Left" Height="70" Margin="10,0,0,0" VerticalAlignment="Center" Width="70" Source="/Only Finder Logo.png"/>
-        <TextBox x:Name="EmailBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0,26,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="40" FontSize="20"/>
-        <TextBox x:Name="UsernameBox" Grid.Column="1" Margin="0,27,0,0" TextWrapping="Wrap" Width="300" Grid.Row="1" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="PasswordBox" Grid.Column="1" Margin="0,27,0,0" TextWrapping="Wrap" Width="300" Grid.Row="3" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Text="sdaf" AllowDrop="True"/>
-        <Label Grid.Column="1" Content="Regestrieren" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White"/>
-        <Label Grid.Column="1" Content="Username" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Grid.Column="1" Content="Email" HorizontalAlignment="Left" Margin="100,0,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.658"/>
-        <Label Grid.Column="1" Content="Password" HorizontalAlignment="Left" Margin="100,1,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <TextBox x:Name="Password2Bpx" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="4" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
-        <Label Grid.Column="1" Content="Password Wiederholen" HorizontalAlignment="Left" Margin="100,72,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Content="OnlyFinder" HorizontalAlignment="Left" Margin="75,18,0,0" VerticalAlignment="Top"/>
-        <Canvas Background="Black" Panel.ZIndex="-1"/>
-        <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
-        <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1"/>
+        <TextBox x:Name="EmailBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0,26,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="40" FontSize="20" Text="1"/>
+        <TextBox x:Name="UsernameBox" Grid.Column="1" Margin="0,27,0,0" TextWrapping="Wrap" Width="300" Grid.Row="1" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Text="1"/>
+        <TextBox x:Name="PasswordBox" Grid.Column="1" Margin="0,27,0,0" TextWrapping="Wrap" Width="300" Grid.Row="3" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Text="1234" AllowDrop="True"/>
+        <Label Grid.Column="1" Content="Regestrieren" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White" Height="36" Width="129"/>
+        <Label Grid.Column="1" Content="Username" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="63"/>
+        <Label Grid.Column="1" Content="Email" HorizontalAlignment="Left" Margin="100,69,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.658" Grid.RowSpan="2" Height="26" Width="38"/>
+        <Label Grid.Column="1" Content="Password" HorizontalAlignment="Left" Margin="100,1,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="60"/>
+        <TextBox x:Name="Password2Bpx" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="4" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Text="1234"/>
+        <Label Grid.Column="1" Content="Password Wiederholen" HorizontalAlignment="Left" Margin="100,2,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="131"/>
+        <Label Content="OnlyFinder" HorizontalAlignment="Left" Margin="75,18,0,0" VerticalAlignment="Top" Height="26" Width="68"/>
+        <Canvas Background="Black" Panel.ZIndex="-1" Margin="0,0,0,69" Grid.RowSpan="2"/>
+        <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1" Margin="0,0,0,69" Grid.RowSpan="2"/>
+        <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1" Margin="0,0,0,69" Grid.RowSpan="2"/>
 
 
     </Grid>
