@@ -22,6 +22,7 @@ namespace OnlyFinder
         public Register1()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
 
         string UserBox;
@@ -50,15 +51,15 @@ namespace OnlyFinder
 
             if (UsernameBox.Text == string.Empty)
             {
-                MessageBox.Show("Username Kann nicht lehr sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Username Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (EmailBox.Text == string.Empty)
             {
-                MessageBox.Show("Email Kann nicht lehr sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Email Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (PasswordBox.Text == string.Empty)
             {
-                MessageBox.Show("Passwort kann nicht lehr sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Passwort kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if(Password.Length < 4)
             {
