@@ -43,7 +43,6 @@ namespace OnlyFinder
             EmailBox = Email;
             PasswordBox = Password;
 
-            //NameBox.Text = Username;
         }
 
 
@@ -61,7 +60,32 @@ namespace OnlyFinder
         {
             Register3 reg3 = new Register3();
             reg3.Show();
-           
+
+            Name = NameBox.Text;
+            Geburtsdatum = GeburtsdatumBox.Text;
+            Wohnort = WohnortBox.Text;
+            Telefon = TelefonBox.Text;
+
+            if (NameBox.Text == string.Empty)
+            {
+                MessageBox.Show("Name Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else if (GeburtsdatumBox.Text == string.Empty)
+            {
+                MessageBox.Show("Geburtsdatum Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else if (WohnortBox.Text == string.Empty)
+            {
+                MessageBox.Show("Name Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else if (TelefonBox.Text == string.Empty)
+            {
+                MessageBox.Show("Name Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
             if (Ich_Man.IsChecked == true)
             {
                 IchBin = "M";
@@ -96,7 +120,7 @@ namespace OnlyFinder
                 MessageBox.Show("Wählen sie Partner geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            
+      
 
             this.Close();
         }
