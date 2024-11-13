@@ -20,7 +20,7 @@ namespace OnlyFinder
         {
             InitializeComponent();
 
-            // TEST
+            this.WindowState = WindowState.Maximized;
 
         }
 

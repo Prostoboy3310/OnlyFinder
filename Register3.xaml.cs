@@ -23,6 +23,7 @@ namespace OnlyFinder
         public Register3()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
 
         string Username;
@@ -95,6 +96,13 @@ namespace OnlyFinder
             Registrieren2 R2 = new Registrieren2();
             R2.Show();
 
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MyMain = new MainWindow();
+            MyMain.Show();
             this.Close();
         }
     }

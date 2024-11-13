@@ -23,6 +23,7 @@ namespace OnlyFinder
         public Register1()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
 
         string UserBox;
