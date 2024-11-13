@@ -36,7 +36,7 @@ namespace OnlyFinder
         string Geburtsdatum;
         string Wohnort;
         string Telefon;
-        
+
 
         public void SetValues(string Username, string Email, string Password)
         {
@@ -44,7 +44,6 @@ namespace OnlyFinder
             EmailBox = Email;
             PasswordBox = Password;
 
-            //NameBox.Text = Username;
         }
 
 
@@ -60,26 +59,49 @@ namespace OnlyFinder
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Register3 reg3 = new Register3();
-            reg3.Show();
-           
+            // Werte aus den Textboxen und Checkboxen holen
+            Name = NameBox.Text;
+            Geburtsdatum = GeburtsdatumBox.Text;
+            Wohnort = WohnortBox.Text;
+            Telefon = TelefonBox.Text;
+
+            // Validierung
+            if (NameBox.Text == string.Empty)
+            {
+                MessageBox.Show("Name Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (GeburtsdatumBox.Text == string.Empty)
+            {
+                MessageBox.Show("Geburtsdatum Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (WohnortBox.Text == string.Empty)
+            {
+                MessageBox.Show("Wohnort Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Geschlecht prüfen
             if (Ich_Man.IsChecked == true)
             {
                 IchBin = "M";
             }
-            else if(Ich_Frau.IsChecked == true)
+            else if (Ich_Frau.IsChecked == true)
             {
                 IchBin = "F";
             }
-            else if(Ich_Divers.IsChecked == true)
+            else if (Ich_Divers.IsChecked == true)
             {
                 IchBin = "D";
             }
             else
             {
-                MessageBox.Show("Wählen sie geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Wählen Sie Geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
 
+            // Geschlecht des Partners prüfen
             if (Suche_Man.IsChecked == true)
             {
                 Suche = "M";
@@ -94,11 +116,15 @@ namespace OnlyFinder
             }
             else
             {
-                MessageBox.Show("Wählen sie Partner geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Wählen Sie Partner-Geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
 
-            
+            // Wenn alle Überprüfungen erfolgreich waren, neues Fenster öffnen
+            Register3 reg3 = new Register3();
+            reg3.Show();
 
+            // Aktuelles Fenster schließen
             this.Close();
         }
     }

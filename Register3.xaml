@@ -50,7 +50,7 @@
             <Label Content="Label" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
         </Grid>
 
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png" Margin="10,0,0,0" Grid.Column="1"/>
+        <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>
         <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Panel.ZIndex="7" Background="Black"/>
