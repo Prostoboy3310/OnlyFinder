@@ -32,26 +32,28 @@
                 <RowDefinition Height="54*"/>
                 <RowDefinition Height="67*"/>
             </Grid.RowDefinitions>
-            <RichTextBox Margin="10,20,10,10">
+            <RichTextBox Margin="10,20,10,10" TextChanged="RichTextBox_TextChanged">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="RichTextBox"/>
+                        <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
             <RichTextBox Grid.Row="1" Margin="10,20,10,0">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="RichTextBox"/>
+                        <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,-6,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Height="26" Grid.Row="1" Width="38"/>
+            <Label Content="Eine Satz/Spuch zur vorstellung" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="26" Width="177"/>
+            <Label Content="Interressen/Hobbys&#xD;&#xA;" HorizontalAlignment="Left" Margin="6,103,0,0" VerticalAlignment="Top" Height="26" Width="140" Grid.RowSpan="2"/>
         </Grid>
 
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>
-        <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
+        <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1">
+            <Label Content="Regestrieren" FontSize="20" FontWeight="Bold" Foreground="White" Background="black" Height="37" Width="129" HorizontalAlignment="Left" Canvas.Left="9" Canvas.Top="29" VerticalAlignment="Center"/>
+        </Canvas>
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Panel.ZIndex="7" Background="Black"/>
         <Canvas Grid.Column="3" Background="Black" Panel.ZIndex="-1"/>
@@ -60,6 +62,7 @@
         <Canvas Grid.Column="1" Grid.Row="1" Background="#FF929292" Margin="10,20,10,10">
             <Image Stretch="Uniform" x:Name="MyImage"  Grid.Column="1" HorizontalAlignment="Left" Height="203" Grid.Row="1" VerticalAlignment="Top" Width="261" Drop="Image_Drop" DragEnter="Image_DragEnter" OpacityMask="#FFDA1E1E" Canvas.Left="10" Canvas.Top="10"/>
         </Canvas>
+        <Label Grid.Column="1" Content="Bild Hochladen" HorizontalAlignment="Left" Margin="5,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.306,0.124" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>
