@@ -35,14 +35,14 @@
             <RichTextBox Margin="10,20,10,10" TextChanged="RichTextBox_TextChanged">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="RichTextBox"/>
+                        <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
             <RichTextBox Grid.Row="1" Margin="10,20,10,0">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="RichTextBox"/>
+                        <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
