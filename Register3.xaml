@@ -10,14 +10,10 @@
         DragEnter="Image_DragEnter"
         Drop="Image_Drop">
     <Grid Background="AliceBlue">
-        <Grid.Style>
-            <Style/>
-        </Grid.Style>
         <Grid.RowDefinitions>
             <RowDefinition Height="100.022"/>
             <RowDefinition/>
             <RowDefinition Height="83.004"/>
-
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -27,6 +23,7 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Eingabebereich mit Labels -->
         <Grid Grid.Column="2" Margin="0,100,0,9" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="54*"/>
@@ -46,9 +43,19 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <Label Content="Eine Satz/Spuch zur vorstellung" HorizontalAlignment="Left" Margin="5,-4,0,0" VerticalAlignment="Top" Height="26" Width="177"/>
-            <Label Content="Interressen/Hobbys&#xD;&#xA;" HorizontalAlignment="Left" Margin="6,103,0,0" VerticalAlignment="Top" Height="26" Width="140" Grid.RowSpan="2"/>
         </Grid>
+
+        <!-- Fixierte Labels im separaten Canvas -->
+        <Canvas Grid.Column="2" Margin="0" Grid.Row="0">
+            <Label Content="Eine Satz/Spuch zur vorstellung" 
+                   Canvas.Left="5" 
+                   Canvas.Top="99"
+                   Width="177" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Interessen/Hobbys" 
+                   Canvas.Left="5" 
+                   Canvas.Top="383"
+                   Width="140" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
 
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>
         <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1">
@@ -57,13 +64,13 @@
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Panel.ZIndex="7" Background="Black"/>
         <Canvas Grid.Column="3" Background="Black" Panel.ZIndex="-1"/>
+
         <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_2" Foreground="White" Background="Black"/>
         <Button Grid.Column="3" Content="Speichern" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click" Foreground="White" Background="Black" />
+
         <Canvas Grid.Column="1" Grid.Row="1" Background="#FF929292" Margin="10,20,10,10">
             <Image Stretch="Uniform" x:Name="MyImage"  Grid.Column="1" HorizontalAlignment="Left" Height="203" Grid.Row="1" VerticalAlignment="Top" Width="261" Drop="Image_Drop" DragEnter="Image_DragEnter" OpacityMask="#FFDA1E1E" Canvas.Left="10" Canvas.Top="10"/>
         </Canvas>
         <Label Grid.Column="1" Content="Bild Hochladen" HorizontalAlignment="Left" Margin="5,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.306,0.124" Grid.RowSpan="2"/>
-
     </Grid>
 </Window>
-
