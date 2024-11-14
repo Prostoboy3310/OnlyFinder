@@ -44,6 +44,9 @@ namespace OnlyFinder
             EmailBox = Email;
             PasswordBox = Password;
 
+            // test Weiterleiten
+            //NameBox.Text = Username;
+
         }
 
 
@@ -122,6 +125,7 @@ namespace OnlyFinder
 
             // Wenn alle Überprüfungen erfolgreich waren, neues Fenster öffnen
             Register3 reg3 = new Register3();
+            reg3.GetData(UsernameBox, EmailBox, PasswordBox, IchBin, Suche, Name, Geburtsdatum, Wohnort, Telefon);
             reg3.Show();
 
             // Aktuelles Fenster schließen
