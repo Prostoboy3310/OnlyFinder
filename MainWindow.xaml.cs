@@ -34,7 +34,8 @@ namespace OnlyFinder
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            DatingWindow DW = new DatingWindow();
+            DW.Show();
         }
     }
 }
