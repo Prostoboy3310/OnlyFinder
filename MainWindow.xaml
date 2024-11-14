@@ -26,7 +26,7 @@
         </Grid.ColumnDefinitions>
         <!-- <Canvas Grid.Column="1" Grid.Row="2" Background="Black"/> -->
         <CheckBox Grid.Column="1" Content="Angemeldet bleiben" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" ClickMode="Press"/>
-        <Button Grid.Column="1" Content="Registrieren" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="30" Margin="100,14,0,0" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
+        <Button Grid.Column="1" Content="Registrieren" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="30" Margin="100,14,0,0" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Background="Black" Foreground="White">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

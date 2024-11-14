@@ -22,6 +22,7 @@ namespace OnlyFinder
         public DatingWindow()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
         }
     }
 }
