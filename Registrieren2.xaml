@@ -14,40 +14,43 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
+            <RowDefinition Height="71.808"/>
+            <RowDefinition Height="71.808"/>
+            <RowDefinition Height="71.808"/>
+            <RowDefinition Height="71.808"/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="54.853"/>
         </Grid.RowDefinitions>
-        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click" Foreground="White" Background="Black"/>
-        <Button Grid.Column="2" Content="Weiter" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="100" Height="30" Click="Button_Click_1" Foreground="White" Background="black"/>
-        <TextBox x:Name="NameBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="1" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Zurück" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click" Foreground="White" Background="Black" Margin="0,3,0,0"/>
+        <Button Grid.Column="2" Content="Weiter" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click_1" Foreground="White" Background="black" Margin="0,3,0,0"/>
+        <TextBox x:Name="NameBox" Grid.Column="1" Margin="0,32,0,0" TextWrapping="Wrap" Width="300" Grid.Row="1" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.RowSpan="2"/>
         <TextBox x:Name="GeburtsdatumBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="2" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="WohnortBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="3" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="TelefonBox" Grid.Column="1" Margin="0,26,0,0" TextWrapping="Wrap" Width="300" Grid.Row="4" Height="40" RenderTransformOrigin="0.518,0.508" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
         <Image HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="70" Source="/Only Finder Logo.png"/>
-        <Label Grid.Column="1" Content="Regestrieren" HorizontalAlignment="Left" Margin="12,17,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Background="black"/>
-        <Label Grid.Column="1" Grid.Row="0" Content="Name" HorizontalAlignment="Left" Margin="12,72,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Grid.Column="1" Grid.Row="1" Content="Geburtsdatum" HorizontalAlignment="Left" Margin="12,72,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Grid.Column="1" Grid.Row="2" Content="Wohnort" HorizontalAlignment="Left" Margin="12,72,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Grid.Column="1" Grid.Row="3" Content="Telefon (Optional)" HorizontalAlignment="Left" Margin="12,72,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Grid.Column="1" Content="Regestrieren" HorizontalAlignment="Left" Margin="12,17,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Background="black" Height="37" Width="129"/>
+        <Label Grid.Column="1" Grid.Row="0" Content="Name" HorizontalAlignment="Left" Margin="148,72,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Height="26" Width="42"/>
+        <Label Grid.Column="1" Grid.Row="2" Content="Geburtsdatum" HorizontalAlignment="Left" Margin="126,0,0,0" VerticalAlignment="Top" Height="26" Width="86"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="Wohnort" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
+        <Label Grid.Column="1" Grid.Row="4" Content="Telefon (Optional)" HorizontalAlignment="Left" Margin="116,1,0,0" VerticalAlignment="Top" Height="26" Width="105"/>
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="1" Background="Black" Panel.ZIndex="-1"/>
         <Canvas Grid.Column="2" Background="Black" Panel.ZIndex="-1"/>
-        <Label Grid.Column="2" Content="Ich bin" HorizontalAlignment="Center" Margin="0,46,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Grid.Column="2" Content="Ich Suche" HorizontalAlignment="Center" Margin="0,46,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <RadioButton x:Name="Suche_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Margin="30,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
-        <RadioButton x:Name="Suche_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center"/>
-        <RadioButton x:Name="Suche_Divers" Grid.Column="2" Content="Divers" HorizontalAlignment="Left" Margin="230,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
 
-        <Canvas Grid.Column="2" Grid.Row="2">
-            <RadioButton x:Name="Ich_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="30" Canvas.Top="24"/>
-            <RadioButton x:Name="Ich_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="142" Canvas.Top="24"/>
-            <RadioButton x:Name="Ich_Divers" Grid.Column="2" Content="Devers" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="230" Canvas.Top="24"/>
+        <Canvas Grid.Column="2" Grid.Row="3" Margin="0,71,15,0" Grid.RowSpan="2">
+            <Label Grid.Column="2" Content="Ich Suche" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Canvas.Left="133"/>
+            <RadioButton x:Name="Suche_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="47"/>
+            <RadioButton x:Name="Suche_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" Canvas.Left="142" Canvas.Top="47"/>
+            <RadioButton x:Name="Suche_Divers" Grid.Column="2" Content="Divers" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Canvas.Left="263" Canvas.Top="47"/>
+        </Canvas>
+        <Canvas Grid.Column="2" Grid.Row="2" Margin="0,0,10,71" Grid.RowSpan="2">
+            <Label Grid.Column="2" Content="Ich bin" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2" Canvas.Left="142"/>
+            <RadioButton x:Name="Ich_Man" Grid.Column="2" Content="Man" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="47"/>
+            <RadioButton x:Name="Ich_Frau" Grid.Column="2" Content="Frau" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Canvas.Left="142" Canvas.Top="47"/>
+            <RadioButton x:Name="Ich_Divers" Grid.Column="2" Content="Devers" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="260" Canvas.Top="47"/>
         </Canvas>
     </Grid>
 </Window>
