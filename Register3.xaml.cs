@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities.Encoders;
 
 namespace OnlyFinder
 {
@@ -59,14 +60,17 @@ namespace OnlyFinder
 
         string Name;
         string Geburtsdatum;
+        DateTime gebdatum;
         string Wohnort;
         string Telefon;
+
+        private string imageFilePath;
 
         string Hobbies;
         string WelcomeText;
         // image?
 
-        public void GetData(string User, string email, string password, string ichbin, string suche, string name, string geburtsdatum, string wohnort, string telefon)
+        public void GetData(string User, string email, string password, string ichbin, string suche, string name, string geburtsdatum, DateTime geburtsdatum2, string wohnort, string telefon)
         {
             Username = User;
             Email = email;
@@ -75,8 +79,94 @@ namespace OnlyFinder
             Suche = suche;
             Name = name;
             Geburtsdatum = geburtsdatum;
+            gebdatum = geburtsdatum2;
             Wohnort = wohnort;
             Telefon = telefon;
+        }
+        private byte[] ConvertImageToByteArray(string filePath)
+        {
+            try
+            {
+                return File.ReadAllBytes(filePath); // Read image file as byte array
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show($"Fehler beim Lesen des Bildes: {ex.Message}");
+                return null;
+            }
+        }
+        private void SaveUserData(string username, string email, string password)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // SQL-INSERT-Befehl zum Speichern der Daten in der Nutzer-Tabelle
+                    string query1 = "INSERT INTO Nutzer (Nutzername, Email, Passworde) VALUES (@username, @email, @password)";
+                    MySqlCommand cmd1 = new MySqlCommand(query1, connection);
+
+                    // Verwende Parameter, um SQL-Injection zu verhindern
+                    cmd1.Parameters.AddWithValue("@username", username);
+                    cmd1.Parameters.AddWithValue("@email", email);
+                    cmd1.Parameters.AddWithValue("@password", password); // Passwort sollte gehasht sein
+
+                    // Ausführen der ersten Abfrage
+                    int rowsAffected1 = cmd1.ExecuteNonQuery();
+
+                    if (rowsAffected1 > 0)
+                    {
+                        // Wenn der Benutzer erfolgreich gespeichert wurde, speichere die Profildaten
+                        string query2 = "INSERT INTO Profil (Vorname, Gebutrsdatum, Wohnort, Telefon, Geschlecht, Sex, Hobby, Satz, Bilder) " +
+                                        "VALUES (@vorname, @geburtsdatum, @wohnort, @telefon, @geschlecht, @sex, @hobby, @satz, @bild)";
+
+                        MySqlCommand cmd2 = new MySqlCommand(query2, connection);
+
+                        // Parameter für die Profildaten setzen
+                        cmd2.Parameters.AddWithValue("@vorname", Name);
+                        //cmd2.Parameters.AddWithValue("@nachname", nachname);
+                        cmd2.Parameters.AddWithValue("@geburtsdatum", Geburtsdatum);
+                        cmd2.Parameters.AddWithValue("@wohnort", Wohnort);
+                        cmd2.Parameters.AddWithValue("@telefon", Telefon);
+                        cmd2.Parameters.AddWithValue("@geschlecht", IchBin);
+                        cmd2.Parameters.AddWithValue("@sex", Suche);
+                        cmd2.Parameters.AddWithValue("@hobby", Hobbies);
+                        cmd2.Parameters.AddWithValue("@satz", WelcomeText);
+                        //cmd2.Parameters.AddWithValue("@bild", bild); // 'bild' als Byte-Array für Bilddaten
+                        byte[] imageBytes = ConvertImageToByteArray(imageFilePath);
+                        if (imageBytes != null)
+                        {
+                            cmd2.Parameters.AddWithValue("@bild", imageBytes);
+                        }
+                        else
+                        {
+                            cmd2.Parameters.AddWithValue("@bild", DBNull.Value); // Falls kein Bild vorhanden ist
+                        }
+
+
+                        // Ausführen der zweiten Abfrage
+                        int rowsAffected2 = cmd2.ExecuteNonQuery();
+
+                        if (rowsAffected2 > 0)
+                        {
+                            MessageBox.Show("Benutzer und Profil erfolgreich gespeichert!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fehler beim Speichern des Profils.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fehler beim Speichern des Benutzers.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Fehler: {ex.Message}");
+                }
+            }
         }
 
         private void Image_Drop(object sender, DragEventArgs e)
@@ -90,6 +180,7 @@ namespace OnlyFinder
                 {
                     // Lade das erste Bild im Array
                     string filePath = files[0];
+                    imageFilePath = files[0];
 
                     // Erstelle ein BitmapImage und lade das Bild
                     BitmapImage bitmap = new BitmapImage();
@@ -127,6 +218,7 @@ namespace OnlyFinder
         {
             MainWindow MyMain = new MainWindow();
             MyMain.Show();
+            SaveUserData(Username, Email, Password);
             this.Close();
         }
 

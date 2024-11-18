@@ -23,17 +23,21 @@
         </Grid.RowDefinitions>
 
         <!-- Left Menu (Column 1) -->
-        <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="10" Background="Black" >
-            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>
-            <Button Content="MY Profile" Height="30" Margin="0,20,0,0" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="2" />
-            <Button Content="Settings" Height="30" Margin="0,10,0,0" Foreground="white" Background="Black" BorderBrush="White" BorderThickness="2" />
-            <Button Content="Search" Height="30" Margin="0,10,0,0" Foreground="white" Background="Black" BorderBrush="White" BorderThickness="2" />
-            <Button Content="Logout" Height="30" Margin="0,100,0,0" VerticalAlignment="Bottom" Foreground="white" Background="Black" BorderBrush="White" BorderThickness="2"/>
-        </StackPanel>
+        <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="/Only Finder Logo.png" Margin="0,10,0,0"/>
+
+        <!-- Move Buttons to the Top -->
+        <Button Grid.Column="0" Grid.Row="0" Content="MY Profile" Height="30" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="2" VerticalAlignment="Top" Margin="10,120,10,0"/>
+        <Button Grid.Column="0" Grid.Row="0" Content="Settings" Height="30" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="2" VerticalAlignment="Top" Margin="10,160,10,0"/>
+        <Button Grid.Column="0" Grid.Row="0" Content="Search" Height="30" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="2" VerticalAlignment="Top" Margin="10,200,10,0"/>
+
+        <!-- Logout Button at the Bottom -->
+        <Button Content="Logout" Height="35" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="2"
+                Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="10" />
+
 
         <!-- Middle Section for Picture (Column 2) -->
-        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10">
-            <TextBlock Text="Picture" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border x:Name="PictureBox" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
 
         <!-- Right Column (Column 3) -->
@@ -51,7 +55,7 @@
             </Grid.RowDefinitions>
 
             <!-- Name Section -->
-            <TextBlock Text="Name" FontWeight="Bold" FontSize="16" Grid.Row="0" Margin="0,0,0,10"/>
+            <TextBlock x:Name="NameBox" Text="Name" FontWeight="Bold" FontSize="16" Grid.Row="0" Margin="0,0,0,10"/>
 
             <!-- Text Information Section -->
             <TextBlock Text="Text Information" Grid.Row="1" Margin="0,0,0,10"/>
