@@ -29,14 +29,14 @@
                 <RowDefinition Height="54*"/>
                 <RowDefinition Height="67*"/>
             </Grid.RowDefinitions>
-            <RichTextBox Margin="10,20,10,10" TextChanged="RichTextBox_TextChanged">
+            <RichTextBox x:Name="SatzBox" Margin="10,20,10,10" TextChanged="RichTextBox_TextChanged">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <RichTextBox Grid.Row="1" Margin="10,20,10,0">
+            <RichTextBox x:Name="HobbiesBox" Grid.Row="1" Margin="10,20,10,0">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -53,8 +53,8 @@
                    Width="177" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Content="Interessen/Hobbys" 
                    Canvas.Left="5" 
-                   Canvas.Top="383"
-                   Width="140" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                   Canvas.Top="379"
+                   Width="140" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
 
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>
