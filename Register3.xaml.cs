@@ -216,6 +216,7 @@ namespace OnlyFinder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             // Extrahiere den Text aus der RichTextBox für WelcomeText
             TextRange welcomeTextRange = new TextRange(SatzBox.Document.ContentStart, SatzBox.Document.ContentEnd);
             WelcomeText = welcomeTextRange.Text.Trim(); // Trim entfernt unnötige Leerzeichen oder Zeilenumbrüche
@@ -223,6 +224,18 @@ namespace OnlyFinder
             // Extrahiere den Text aus der RichTextBox für Hobbies
             TextRange hobbiesTextRange = new TextRange(HobbiesBox.Document.ContentStart, HobbiesBox.Document.ContentEnd);
             Hobbies = hobbiesTextRange.Text.Trim(); // Trim entfernt unnötige Leerzeichen oder Zeilenumbrüche
+
+            if (WelcomeText == string.Empty)
+            {
+                MessageBox.Show("Schreiben Sie einen Vorstellungs Text", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (Hobbies == string.Empty)
+            {
+                MessageBox.Show("Wählen Sie Geschlecht aus", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             MainWindow MyMain = new MainWindow();
             MyMain.Show();

@@ -53,8 +53,8 @@
                    Width="177" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Content="Interessen/Hobbys" 
                    Canvas.Left="5" 
-                   Canvas.Top="383"
-                   Width="140" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                   Canvas.Top="379"
+                   Width="140" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
 
         <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/Only Finder Logo.png"/>
