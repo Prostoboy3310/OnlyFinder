@@ -118,7 +118,7 @@ namespace OnlyFinder
                     if (rowsAffected1 > 0)
                     {
                         // Wenn der Benutzer erfolgreich gespeichert wurde, speichere die Profildaten
-                        string query2 = "INSERT INTO Profil (Vorname, Gebutrsdatum, Wohnort, Telefon, Geschlecht, Sex, Hobby, Satz, Bilder) " +
+                        string query2 = "INSERT INTO Profil (Name, Gebutrsdatum, Wohnort, Telefon, Geschlecht, Sex, Hobby, Satz, Bilder) " +
                                         "VALUES (@vorname, @geburtsdatum, @wohnort, @telefon, @geschlecht, @sex, @hobby, @satz, @bild)";
 
                         MySqlCommand cmd2 = new MySqlCommand(query2, connection);
