@@ -53,7 +53,7 @@
                    Width="177" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Content="Interessen/Hobbys" 
                    Canvas.Left="5" 
-                   Canvas.Top="379"
+                   Canvas.Top="383"
                    Width="140" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
 
