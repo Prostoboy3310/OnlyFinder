@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace OnlyFinder
 {
@@ -23,6 +24,31 @@ namespace OnlyFinder
         {
             InitializeComponent();
             this.WindowState = WindowState.Maximized;
+            ConnectAndQueryDatabase();
+        }
+
+
+        string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=1234;";
+        public void ConnectAndQueryDatabase()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    MessageBox.Show("Verbindung erfolgreich!");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public void GetDataFromDB()
+        {
+
         }
     }
 }

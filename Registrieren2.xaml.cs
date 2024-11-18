@@ -34,6 +34,7 @@ namespace OnlyFinder
 
         string Name;
         string Geburtsdatum;
+        DateTime geburtsdatum;
         string Wohnort;
         string Telefon;
 
@@ -43,6 +44,9 @@ namespace OnlyFinder
             UsernameBox = Username;
             EmailBox = Email;
             PasswordBox = Password;
+
+            // test Weiterleiten
+            //NameBox.Text = Username;
 
         }
 
@@ -79,6 +83,18 @@ namespace OnlyFinder
             if (WohnortBox.Text == string.Empty)
             {
                 MessageBox.Show("Wohnort Kann nicht leer sein", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            
+
+            if (DateTime.TryParse(Geburtsdatum, out geburtsdatum))
+            {
+                // Das Datum wurde erfolgreich konvertiert
+            }
+            else
+            {
+                // Fehler beim Konvertieren des Datums, handle den Fehler hier
+                MessageBox.Show("Das eingegebene Datum ist ungültig.");
                 return;
             }
 
@@ -122,6 +138,7 @@ namespace OnlyFinder
 
             // Wenn alle Überprüfungen erfolgreich waren, neues Fenster öffnen
             Register3 reg3 = new Register3();
+            reg3.GetData(UsernameBox, EmailBox, PasswordBox, IchBin, Suche, Name, Geburtsdatum, geburtsdatum, Wohnort, Telefon);
             reg3.Show();
 
             // Aktuelles Fenster schließen
