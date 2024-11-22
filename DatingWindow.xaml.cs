@@ -1,50 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
 namespace OnlyFinder
 {
-    /// <summary>
-    /// Interaktionslogik für DatingWindow.xaml
-    /// </summary>
     public partial class DatingWindow : Window
     {
         public DatingWindow()
         {
             InitializeComponent();
-
             this.WindowState = WindowState.Maximized;
-
-            ConnectAndQueryDatabase();
-            GetDataFromDB();
-
-        }
-        public int UserID;
-
-
-
-
-        public void GetID(int ID)
-        {
-
-
         }
 
-        string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=1234;";
+        public string Name; // Hier speichern wir die NutzerID bzw. den Namen des Benutzers
 
-        // Methode zum Verbinden und Abrufen von Benutzerdaten
-        public void ConnectAndQueryDatabase()
+        string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=Justin0910;";
+
+        // Methode zum Abrufen des Namens, Satzes, Hobbys und des Bildes aus der Datenbank basierend auf der NutzerID
+        public void ConnectAndQueryDatabase(int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -53,30 +28,88 @@ namespace OnlyFinder
                     connection.Open();
                     MessageBox.Show("Verbindung erfolgreich!");
 
-                    // SQL-Abfrage, um den Namen des Benutzers anhand der UserID zu holen
-                    string query = "SELECT NutzerID FROM Nutzer WHERE NutzerID = @UserID";
+                    // SQL-Join-Abfrage, um den Namen, Satz, Hobby und Bild des Benutzers aus der 'Profil'-Tabelle zu holen
+                    string query = "SELECT p.Name, p.Satz, p.Hobby, p.Bilder FROM Profil p " +
+                                   "JOIN Nutzer n ON n.NutzerID = p.PorfilID " + // Verknüpfen der Tabellen
+                                   "WHERE n.NutzerID = @UserId";
 
                     MySqlCommand cmd = new MySqlCommand(query, connection);
-                    //cmd.Parameters.AddWithValue("@UserID", UserID); // UserID als Parameter hinzufügen
+                    cmd.Parameters.AddWithValue("@UserId", userId); // Verwende hier den korrekten Datentyp für NutzerID (INT)
 
-                    // Abrufen des Benutzernamens
+                    // Ausführen der Abfrage und Abrufen des Namens, Satzes, Hobbys und Bildes
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        string fetchedName = reader.GetString("Name");
+                        string fetchedSatz = reader.GetString("Satz");
+                        string fetchedHobby = reader.GetString("Hobby");
 
+                        // Setzen der abgerufenen Werte in die Textfelder
+                        NameBox.Text = $"Name: {fetchedName}";
+                        Satzblock.Text = $"Satz: {fetchedSatz}";
+                        Hobbyblock.Text = $"Hobby: {fetchedHobby}";
 
+                        // Abrufen des Bildes als Byte-Array
+                        if (!reader.IsDBNull(reader.GetOrdinal("Bilder")))
+                        {
+                            byte[] imageBytes = reader["Bilder"] as byte[];
+                            if (imageBytes != null && imageBytes.Length > 0)
+                            {
+                                // Konvertieren der Byte-Daten in ein Bild
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    BitmapImage bitmap = new BitmapImage();
+                                    bitmap.BeginInit();
+                                    bitmap.StreamSource = ms;
+                                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                                    bitmap.EndInit();
 
-                    // Den Namen in der NameBox anzeigen
-
+                                    // Bild im Image-Steuerelement anzeigen
+                                    MyImage.Source = bitmap;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kein Benutzer mit dieser ID gefunden.");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Fehler bei der Datenbankverbindung: " + ex.Message);
                 }
             }
         }
+
+        // Diese Methode ruft die Benutzerdaten aus der Datenbank ab, nachdem die Name-Variable gesetzt wurde
         public void GetDataFromDB()
         {
-            NameBox.Text = UserID.ToString();
+            if (!string.IsNullOrEmpty(Name))
+            {
+                // Wenn der Name gesetzt wurde, holen wir den vollständigen Benutzernamen aus der Datenbank
+                ConnectAndQueryDatabase(Convert.ToInt32(Name)); // Nutze Convert.ToInt32, um die ID zu int zu konvertieren
+            }
+            else
+            {
+                NameBox.Text = "Kein Benutzername gesetzt.";
+                Satzblock.Text = "Kein Satz gesetzt.";
+                Hobbyblock.Text = "Kein Hobby gesetzt.";
+                MyImage.Source = null; // Keine Bildanzeige, falls kein Bild vorhanden ist
+            }
         }
 
+        // Setzt den Benutzernamen (Name bzw. NutzerID) und zeigt ihn im Textfeld an
+        public void GetName(int userId)
+        {
+            Name = userId.ToString(); // Wandelt die int ID in einen String um
+            NameBox.Text = $"User ID: {Name}"; // Beispiel für die Anzeige der ID
+
+            // Jetzt rufen wir den Namen des Benutzers ab
+            GetDataFromDB();
+        }
+
+        // Event-Handler für den "Zurück"-Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow MW = new MainWindow();
@@ -85,4 +118,3 @@ namespace OnlyFinder
         }
     }
 }
-    

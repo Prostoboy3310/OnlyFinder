@@ -22,7 +22,7 @@ namespace OnlyFinder
     /// </summary>
     public partial class Register3 : Window
     {
-        string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=1234;";
+        string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=Justin0910;";
 
         public void ConnectAndQueryDatabase()
         {
