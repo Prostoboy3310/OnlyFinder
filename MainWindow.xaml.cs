@@ -12,12 +12,11 @@ namespace OnlyFinder
             this.WindowState = WindowState.Maximized;
         }
 
-        string email;
-        string password;
+        private string email;
+        private string password;
+        private int userId; // Nutzer-ID speichern
 
-        string Name; // Variable zur Speicherung der NutzerID
-
-        string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=Justin0910;";
+        private readonly string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=Justin0910;";
 
         private bool AuthenticateUser(string email, string password)
         {
@@ -26,36 +25,24 @@ namespace OnlyFinder
                 try
                 {
                     connection.Open();
-
-                    // SQL-Abfrage, um zu überprüfen, ob der Benutzer existiert und das Passwort stimmt
                     string query = "SELECT Passworde, NutzerID FROM Nutzer WHERE email = @Email";
-
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@Email", email);
 
-                    // Holen des gespeicherten Passworts und der NutzerID aus der Datenbank
                     MySqlDataReader reader = cmd.ExecuteReader();
-
                     if (reader.Read())
                     {
                         var storedPassword = reader.GetString("Passworde");
-                        int userId = reader.GetInt32("NutzerID"); // Holen der NutzerID als int
+                        userId = reader.GetInt32("NutzerID");
 
-                        // Überprüfen, ob das eingegebene Passwort mit dem gespeicherten Passwort übereinstimmt
-                        if (storedPassword == password)
-                        {
-                            // Speichern der NutzerID
-                            Name = userId.ToString();
-                            return true; // Authentifizierung erfolgreich
-                        }
+                        return storedPassword == password;
                     }
 
-                    // Kein Benutzer gefunden oder Passwort stimmt nicht überein
                     return false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Fehler bei der Datenbankverbindung: " + ex.Message);
+                    MessageBox.Show($"Fehler bei der Datenbankverbindung: {ex.Message}");
                     return false;
                 }
             }
@@ -63,26 +50,22 @@ namespace OnlyFinder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Register1 Reg1 = new Register1();
-            Reg1.Show();
+            Register1 reg1 = new Register1();
+            reg1.Show();
             this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            email = EmailBox.Text; // TextBox für E-Mail
-            password = PassBox.Text; // PasswordBox für Passwort
+            email = EmailBox.Text;
+            password = PassBox.Text; // PasswordBox verwenden
 
             if (AuthenticateUser(email, password))
             {
-                DatingWindow DW = new DatingWindow();
-
-                // Passiere die NutzerID als int
-                int userId = Convert.ToInt32(Name);  // Konvertiere Name, falls nötig, in int
-                DW.GetName(userId);  // Übergabe der NutzerID an DatingWindow
-
-                DW.Show();
-                this.Close(); // Schließe das Hauptfenster
+                // Öffne DatingWindow und übergebe die Nutzer-ID
+                DatingWindow dw = new DatingWindow(userId);
+                dw.Show();
+                this.Close();
             }
             else
             {

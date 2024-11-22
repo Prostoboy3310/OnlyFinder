@@ -45,9 +45,6 @@ namespace OnlyFinder
             EmailBox = Email;
             PasswordBox = Password;
 
-            // test Weiterleiten
-            //NameBox.Text = Username;
-
         }
 
 
