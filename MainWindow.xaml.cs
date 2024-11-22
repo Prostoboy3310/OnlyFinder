@@ -14,6 +14,7 @@ namespace OnlyFinder
 
         string email;
         string password;
+        int User_ID = 4; // Variable zur Speicherung der UserID
 
         string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=1234;";
 
@@ -26,22 +27,30 @@ namespace OnlyFinder
                     connection.Open();
 
                     // SQL-Abfrage, um zu überprüfen, ob der Benutzer existiert und das Passwort stimmt
-                    string query = "SELECT Passworde FROM Nutzer WHERE email = @Email";
+                    string query = "SELECT Passworde, NutzerID FROM Nutzer WHERE email = @Email";
+
+                    //string query2 = "SELECT NutzerID FROM Nutzer WHERE email = @Email";
 
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@Email", email);
 
-                    // Holen des gespeicherten Passworts aus der Datenbank
-                    var storedPassword = cmd.ExecuteScalar() as string;
+                    // Holen des gespeicherten Passworts und der UserID aus der Datenbank
+                    MySqlDataReader reader = cmd.ExecuteReader();
 
-                    if (storedPassword == null)
+                    if (reader.Read())
                     {
-                        // Kein Benutzer gefunden
-                        return false;
+                        var storedPassword = reader.GetString("Passworde");
+                        //UserID = reader.GetInt32("NutzerID"); // Benutzer-ID speichern
+
+                        // Überprüfen, ob das eingegebene Passwort mit dem gespeicherten Passwort übereinstimmt
+                        if (storedPassword == password)
+                        {
+                            return true; // Authentifizierung erfolgreich
+                        }
                     }
 
-                    // Überprüfen, ob das eingegebene Passwort mit dem gespeicherten Passwort übereinstimmt
-                    return storedPassword == password;
+                    // Kein Benutzer gefunden oder Passwort stimmt nicht überein
+                    return false;
                 }
                 catch (Exception ex)
                 {
@@ -65,8 +74,12 @@ namespace OnlyFinder
 
             if (AuthenticateUser(email, password))
             {
-                // Wenn Benutzer existiert, öffne das DatingWindow
+                // Wenn Benutzer existiert und Passwort korrekt ist
+                // Die UserID ist jetzt in der Variablen UserID gespeichert
                 DatingWindow DW = new DatingWindow();
+                //DW.GetID(UserID); // Die UserID an das DatingWindow übergeben
+
+                DW.UserID = User_ID;
                 DW.Show();
                 this.Close(); // Schließe das Hauptfenster
             }

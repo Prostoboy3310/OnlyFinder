@@ -23,12 +23,27 @@ namespace OnlyFinder
         public DatingWindow()
         {
             InitializeComponent();
+
             this.WindowState = WindowState.Maximized;
+
             ConnectAndQueryDatabase();
+            GetDataFromDB();
+
+        }
+        public int UserID;
+
+
+
+
+        public void GetID(int ID)
+        {
+
+
         }
 
-
         string connectionString = "Server=localhost;Database=onlyfinder;User ID=root;Password=1234;";
+
+        // Methode zum Verbinden und Abrufen von Benutzerdaten
         public void ConnectAndQueryDatabase()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -38,6 +53,18 @@ namespace OnlyFinder
                     connection.Open();
                     MessageBox.Show("Verbindung erfolgreich!");
 
+                    // SQL-Abfrage, um den Namen des Benutzers anhand der UserID zu holen
+                    string query = "SELECT NutzerID FROM Nutzer WHERE NutzerID = @UserID";
+
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    //cmd.Parameters.AddWithValue("@UserID", UserID); // UserID als Parameter hinzufügen
+
+                    // Abrufen des Benutzernamens
+
+
+
+                    // Den Namen in der NameBox anzeigen
+
                 }
                 catch (Exception ex)
                 {
@@ -45,10 +72,17 @@ namespace OnlyFinder
                 }
             }
         }
-
         public void GetDataFromDB()
         {
+            NameBox.Text = UserID.ToString();
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MW = new MainWindow();
+            MW.Show();
+            this.Close();
         }
     }
 }
+    

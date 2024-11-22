@@ -32,7 +32,7 @@
 
         <!-- Logout Button at the Bottom -->
         <Button Content="Logout" Height="35" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="2"
-                Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="10" />
+                Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="10" Click="Button_Click" />
 
 
         <!-- Middle Section for Picture (Column 2) -->
